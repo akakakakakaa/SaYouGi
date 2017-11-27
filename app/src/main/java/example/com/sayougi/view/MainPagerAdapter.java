@@ -14,34 +14,36 @@ import java.util.List;
  */
 
 public class MainPagerAdapter extends FragmentStatePagerAdapter {
-    private Context context;
-    private List<Class<? extends Fragment>> fragments;
-
-    MainPagerAdapter(@NonNull FragmentManager fragmentManager, @NonNull List<Class<? extends Fragment>> fragments) {
+    MainPagerAdapter(@NonNull FragmentManager fragmentManager) {
         super(fragmentManager);
-        this.fragments = fragments;
     }
 
     @Override
     public int getCount() {
-        return fragments.size();
+        return 5;
     }
 
     @Override
     public Fragment getItem(int position) {
-        try {
-            Fragment fragment = fragments.get(position).getConstructor(String.class).newInstance();
-            return fragment;
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
+        Fragment fragment = null;
+        switch (position) {
+            case 0:
+                fragment = new ItemListFragment();
+                break;
+            case 1:
+                fragment = new ThemeFragment();
+                break;
+            case 2:
+                fragment = new RecommendCourseFragment();
+                break;
+            case 3:
+                fragment = new ThemeFragment();
+                break;
+            case 4:
+                fragment = new ThemeFragment();
+                break;
         }
 
-        return null;
+        return fragment;
     }
 }

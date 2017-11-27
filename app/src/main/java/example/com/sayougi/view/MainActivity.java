@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
+import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,23 +32,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setViewPager() {
-        List<Class<? extends Fragment>> fragments = new ArrayList<>();
-        fragments.add(ItemListFragment.class);
-
-        MainPagerAdapter mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager(), fragments);
+        MainPagerAdapter mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
         mainViewPager.setAdapter(mainPagerAdapter);
     }
 
     private void setNavigationBar() {
-        /*
         mainBottomNavigation
-                .addItem(new BottomNavigationItem(R.drawable.ic_home_white_24dp, "Home"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_book_white_24dp, "Books"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_music_note_white_24dp, "Music"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_tv_white_24dp, "Movies & TV"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_videogame_asset_white_24dp, "Games"))
+                .setMode(BottomNavigationBar.MODE_FIXED)
+                .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC)
+                .addItem(new BottomNavigationItem(R.drawable.ic_launcher_background, "Main"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_launcher_background, "Theme"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_launcher_background, "Course"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_launcher_background, "Movies & TV"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_launcher_background, "Games"))
                 .initialise();
-        */
         mainBottomNavigation.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position) {
