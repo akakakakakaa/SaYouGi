@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<example.com.sayougi.view.SquareLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="80dp"
-    android:paddingBottom="80dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
     <ImageView
-        android:id="@+id/recommendCourseImage"
+        android:id="@+id/themeImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="fitXY"
@@ -14,4 +12,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
-</android.support.constraint.ConstraintLayout>
+</example.com.sayougi.view.SquareLayout>

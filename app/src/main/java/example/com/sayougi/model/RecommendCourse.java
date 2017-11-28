@@ -11,7 +11,7 @@ public class RecommendCourse {
     private String courseName;
     private float basePointX;
     private float basePointY;
-    private List<Location> locations;
+    private List<Sights> sights;
 
     public RecommendCourse() {}
 
@@ -27,12 +27,12 @@ public class RecommendCourse {
         this.courseName = courseName;
     }
 
-    public List<Location> getLocations() {
-        return locations;
+    public List<Sights> getSights() {
+        return sights;
     }
 
-    public void setLocations(List<Location> locations) {
-        this.locations = locations;
+    public void setSights(List<Sights> sights) {
+        this.sights = sights;
     }
 
     public float getBasePointX() {

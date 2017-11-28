@@ -5,7 +5,7 @@
     android:layout_height="200dp">
 
     <ImageView
-        android:id="@+id/recommendImage"
+        android:id="@+id/sightsImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
@@ -15,14 +15,14 @@
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
-        android:id="@+id/recommendDetail"
+        android:id="@+id/sightsDetail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#44000000"
         android:textColor="#FFFFFF"
         android:padding="5dp"
         android:gravity="left|top"
-        app:layout_constraintLeft_toLeftOf="@+id/recommendImage"
-        app:layout_constraintRight_toRightOf="@+id/recommendImage"
-        app:layout_constraintBottom_toBottomOf="@+id/recommendImage"/>
+        app:layout_constraintLeft_toLeftOf="@+id/sightsImage"
+        app:layout_constraintRight_toRightOf="@+id/sightsImage"
+        app:layout_constraintBottom_toBottomOf="@+id/sightsImage"/>
 </android.support.constraint.ConstraintLayout>

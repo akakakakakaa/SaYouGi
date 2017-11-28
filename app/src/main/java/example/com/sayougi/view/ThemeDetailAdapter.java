@@ -6,49 +6,49 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
-
+import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import example.com.sayougi.R;
+import example.com.sayougi.model.ThemeSights;
 
 /**
- * Created by mansu on 2017-11-27.
+ * Created by icns on 2017-11-28.
  */
 
-public class ThemeImageAdapter extends RecyclerView.Adapter<ThemeImageAdapter.ViewHolder> {
+public class ThemeDetailAdapter extends RecyclerView.Adapter<ThemeDetailAdapter.ViewHolder> {
 
     private Context context;
-    private List<String> imageUrls;
+    private List<ThemeSights> themeSights;
 
-    public ThemeImageAdapter(@NonNull Context context, List<String> imageUrls) {
+    public ThemeDetailAdapter(@NonNull Context context) {
         this.context = context;
-        this.imageUrls = imageUrls;
+        themeSights = new ArrayList<>();
+    }
+
+    public void addThemeSights(ThemeSights themeSights) {
+        this.themeSights.add(themeSights);
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_theme_image, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_theme_detail_sights, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Picasso.with(context).load(imageUrls.get(position)).into(holder.themeImage);
+
     }
 
     @Override
     public int getItemCount() {
-        return imageUrls.size();
+        return themeSights.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.themeImage)
-        ImageView themeImage;
 
         public ViewHolder(View itemView) {
             super(itemView);

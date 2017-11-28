@@ -1,5 +1,8 @@
 package example.com.sayougi.view;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +10,7 @@ import android.os.Bundle;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.mainBottomNavigation)
     BottomNavigationBar mainBottomNavigation;
 
+    private MainPagerAdapter mainPagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setViewPager() {
-        MainPagerAdapter mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
+        mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
         mainViewPager.setAdapter(mainPagerAdapter);
     }
 
@@ -46,10 +51,19 @@ public class MainActivity extends AppCompatActivity {
                 .addItem(new BottomNavigationItem(R.drawable.ic_launcher_background, "Movies & TV"))
                 .addItem(new BottomNavigationItem(R.drawable.ic_launcher_background, "Games"))
                 .initialise();
+
         mainBottomNavigation.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener() {
+            int prevPosition;
             @Override
             public void onTabSelected(int position) {
-                mainViewPager.setCurrentItem(position);
+                this.prevPosition = position;
+
+                if(position == 2) {
+                    Intent intent = new Intent(MainActivity.this, ReportActivity.class);
+                    startActivity(intent);
+                }
+                else
+                    mainViewPager.setCurrentItem(position);
             }
 
             @Override
@@ -59,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTabReselected(int position) {
-                mainViewPager.setCurrentItem(position);
+
             }
         });
     }

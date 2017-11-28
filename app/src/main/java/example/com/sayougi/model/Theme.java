@@ -1,20 +1,43 @@
 package example.com.sayougi.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by mansu on 2017-11-27.
  */
 
-public class Theme {
+public class Theme implements Serializable {
+    private String id;
+    private String lang;
     private String name;
-    private List<String> imageUrls;
+    private String countPlace;
+    private String description;
+    private String updatedAt;
 
-    public Theme() {}
-
-    public Theme(String name, List<String> imageUrls) {
+    public Theme(String id, String lang, String name, String countPlace, String description, String updatedAt) {
+        this.id = id;
+        this.lang = lang;
         this.name = name;
-        this.imageUrls = imageUrls;
+        this.countPlace = countPlace;
+        this.description = description;
+        this.updatedAt = updatedAt;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
     }
 
     public String getName() {
@@ -25,11 +48,27 @@ public class Theme {
         this.name = name;
     }
 
-    public List<String> getImageUrls() {
-        return imageUrls;
+    public String getCountPlace() {
+        return countPlace;
     }
 
-    public void setImageUrls(List<String> imageUrls) {
-        this.imageUrls = imageUrls;
+    public void setCountPlace(String countPlace) {
+        this.countPlace = countPlace;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

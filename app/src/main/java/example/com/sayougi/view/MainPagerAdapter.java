@@ -1,19 +1,18 @@
 package example.com.sayougi.view;
 
-import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-
-import java.lang.reflect.InvocationTargetException;
-import java.util.List;
 
 /**
  * Created by icns on 2017-11-24.
  */
 
 public class MainPagerAdapter extends FragmentStatePagerAdapter {
+    private Fragment currentFragment;
+
     MainPagerAdapter(@NonNull FragmentManager fragmentManager) {
         super(fragmentManager);
     }
@@ -25,25 +24,25 @@ public class MainPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new ItemListFragment();
+                currentFragment = new SightsListFragment();
                 break;
             case 1:
-                fragment = new ThemeFragment();
+                currentFragment = new ThemeFragment();
                 break;
             case 2:
-                fragment = new RecommendCourseFragment();
+                //activity를 call할 위치
+                currentFragment = new Fragment();
                 break;
             case 3:
-                fragment = new ThemeFragment();
+                currentFragment = new ThemeFragment();
                 break;
             case 4:
-                fragment = new ThemeFragment();
+                currentFragment = new ThemeFragment();
                 break;
         }
 
-        return fragment;
+        return currentFragment;
     }
 }
