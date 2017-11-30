@@ -16,6 +16,7 @@ import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import example.com.sayougi.R;
 import example.com.sayougi.http.HttpRequest;
 import example.com.sayougi.model.Sights;
@@ -48,6 +49,11 @@ public class SightsDetailActivity extends AppCompatActivity {
 
         setSightsInfo();
         setSightsDetailTMapView();
+    }
+
+    @OnClick(R.id.sightsBack)
+    public void backClicked() {
+        finish();
     }
 
     private void setSightsInfo() {

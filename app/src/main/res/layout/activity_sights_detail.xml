@@ -24,6 +24,16 @@
         app:layout_constraintRight_toRightOf="@+id/sightsDetailActionbar"
         app:layout_constraintBottom_toBottomOf="@+id/sightsDetailActionbar"/>
 
+    <Button
+        android:id="@+id/sightsBack"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_back"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintLeft_toLeftOf="@+id/sightsDetailActionbar"
+        app:layout_constraintTop_toTopOf="@+id/sightsDetailActionbar"
+        app:layout_constraintBottom_toBottomOf="@+id/sightsDetailActionbar"/>
+
     <com.skp.Tmap.TMapView
         android:id="@+id/sightsDetailTMapView"
         android:layout_width="0dp"
