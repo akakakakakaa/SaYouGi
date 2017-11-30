@@ -2,7 +2,8 @@
 <android.support.constraint.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
     <View
         android:id="@+id/reportActionbar"
         android:layout_width="0dp"
@@ -15,11 +16,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="신고하기"
+        android:text="제보하기"
         android:textColor="#FFFFFF"
         app:layout_constraintLeft_toLeftOf="@+id/reportActionbar"
         app:layout_constraintTop_toTopOf="@+id/reportActionbar"
         app:layout_constraintRight_toRightOf="@+id/reportActionbar"
+        app:layout_constraintBottom_toBottomOf="@+id/reportActionbar"/>
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_back"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintLeft_toLeftOf="@+id/reportActionbar"
+        app:layout_constraintTop_toTopOf="@+id/reportActionbar"
         app:layout_constraintBottom_toBottomOf="@+id/reportActionbar"/>
 
     <Button
@@ -37,39 +47,46 @@
         app:layout_constraintBottom_toBottomOf="@+id/reportActionbar"/>
 
     <EditText
-        android:id="@+id/reportContent"
+        android:id="@+id/reportTitle"
         android:layout_width="0dp"
-        android:layout_height="158dp"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:hint="내용을 입력해주세요."
-        android:textColorHint="#42000000"
-        android:background="@null"
-        android:gravity="left|top"
-        android:inputType="textMultiLine|textNoSuggestions"
-        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="#FFFFFF"
+        android:gravity="left|center_vertical"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:hint="제보할 새로운 장소의 이름을 적어주세요."
+        android:textColorHint="#44000000"
+        android:inputType="text"
+        android:singleLine="true"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reportActionbar" />
+        app:layout_constraintTop_toBottomOf="@+id/reportActionbar"
+        app:layout_constraintRight_toRightOf="parent"/>
 
     <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
-        android:background="#4A95989A"
-        app:layout_constraintTop_toBottomOf="@id/reportContent"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#44000000"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reportTitle"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <ImageButton
-        android:id="@+id/reportAddImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="37dp"
-        android:src="@drawable/icon_add_picture"
-        android:background="@null"
-        app:layout_constraintTop_toBottomOf="@+id/reportContent"
+    <EditText
+        android:id="@+id/reportContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:padding="10dp"
+        android:gravity="left|top"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:hint="내용을 입력해주세요."
+        android:textColorHint="#44000000"
+        android:inputType="text"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/reportTitle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 </android.support.constraint.ConstraintLayout>

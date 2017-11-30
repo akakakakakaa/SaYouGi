@@ -72,7 +72,8 @@ public class SightsListFragment extends Fragment {
                                 data.getString("contact"),
                                 data.getString("description"),
                                 data.getString("content"),
-                                data.getString("updated_at")));
+                                data.getString("updated_at"),
+                                data.getString("extra")));
                     }
                     sightsListAdapter.setSights(sights);
                     getActivity().runOnUiThread(new Runnable() {

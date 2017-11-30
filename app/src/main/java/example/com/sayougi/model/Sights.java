@@ -19,8 +19,9 @@ public class Sights implements Serializable {
     private String description;
     private String content;
     private String updatedAt;
+    private String extra;
 
-    public Sights(String id, String lang, String name, String coordX, String coordY, String addrNew, String addrOld, String addrRegion, String contact, String description, String content, String updatedAt) {
+    public Sights(String id, String lang, String name, String coordX, String coordY, String addrNew, String addrOld, String addrRegion, String contact, String description, String content, String updatedAt, String extra) {
         this.id = id;
         this.lang = lang;
         this.name = name;
@@ -33,6 +34,7 @@ public class Sights implements Serializable {
         this.description = description;
         this.content = content;
         this.updatedAt = updatedAt;
+        this.extra = extra;
     }
 
     public String getId() {
@@ -129,5 +131,13 @@ public class Sights implements Serializable {
 
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getExtra() {
+        return extra;
+    }
+
+    public void setExtra(String extra) {
+        this.extra = extra;
     }
 }

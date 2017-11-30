@@ -2,6 +2,7 @@ package example.com.sayougi.view;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -45,11 +46,13 @@ public class MainActivity extends AppCompatActivity {
         mainBottomNavigation
                 .setMode(BottomNavigationBar.MODE_FIXED)
                 .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC)
-                .addItem(new BottomNavigationItem(R.drawable.ic_launcher_background, "Main"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_launcher_background, "Theme"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_launcher_background, "Course"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_launcher_background, "Movies & TV"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_launcher_background, "Games"))
+                .setBarBackgroundColor(R.color.colorPrimary)
+                .setInActiveColor(R.color.white)
+                .setActiveColor(R.color.white)
+                .addItem(new BottomNavigationItem(R.drawable.ic_location, "추천명소"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_theme, "테마"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_report, "신고"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_launcher_background, "로그아웃"))
                 .initialise();
 
         mainBottomNavigation.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener() {

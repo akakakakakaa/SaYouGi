@@ -45,8 +45,8 @@ public class SightsListAdapter extends RecyclerView.Adapter<SightsListAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.sightsDetail.setText(sights.get(position).getDescription());
-        Picasso.with(context).load("http://115.68.182.176/api/places/"+ sights.get(position).getId()+"/thumbnail").into(holder.sightsImage);
+        holder.sightsDetail.setText(sights.get(position).getName());
+        Picasso.with(context).load("http://115.68.182.176/api/place/"+ sights.get(position).getId()+"/thumbnail").into(holder.sightsImage);
         holder.sightsImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

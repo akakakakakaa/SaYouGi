@@ -48,7 +48,7 @@ public class ThemePagerAdapter extends PagerAdapter {
     public Object instantiateItem(final ViewGroup container, final int position) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_theme, null);
         ImageView themeImage = (ImageView)view.findViewById(R.id.themeImage);
-        Picasso.with(context).load("http://115.68.182.176/api/places/"+themes.get(position).getId()+"/thumbnail").into(themeImage);
+        //Picasso.with(context).load(R.drawable.ic_launcher_background).into(themeImage);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

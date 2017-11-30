@@ -33,5 +33,7 @@ public class HttpRequest {
         Call<String> getThemesJson(@Query("page") int page);
         @POST("theme/{theme}/places")
         Call<String> getThemePlaceJson(@Path("theme") String id);
+        @POST("report")
+        Call<String> reportJson(@Query("title") String title, @Query("content") String content, @Query("place_id") String placeId, @Query("theme_id") String themeId);
     }
 }

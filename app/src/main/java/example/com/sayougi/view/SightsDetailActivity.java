@@ -1,9 +1,12 @@
 package example.com.sayougi.view;
 
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.skp.Tmap.TMapMarkerItem;
+import com.skp.Tmap.TMapPoint;
 import com.skp.Tmap.TMapView;
 
 import butterknife.BindView;
@@ -27,21 +30,24 @@ public class SightsDetailActivity extends AppCompatActivity {
     @BindView(R.id.sightsDetailDescription)
     TextView sightsDetailDescription;
 
+    private Sights sights;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sights_detail);
         ButterKnife.bind(this);
 
-        setSights();
+        sights = (Sights)getIntent().getSerializableExtra("sights");
+
+        setSightsInfo();
+        setSightsDetailTMapView();
     }
 
-    private void setSights() {
-        Sights sights = (Sights)getIntent().getSerializableExtra("sights");
+    private void setSightsInfo() {
         sightsDetailTitle.setText(sights.getName());
         sightsDetailOldAddress.setText(sights.getAddrOld());
         sightsDetailNewAddress.setText(sights.getAddrNew());
-        sightsDetailDescription.setText(sights.getDescription());
+        sightsDetailDescription.setText(sights.getExtra());
     }
 
     private void setSightsDetailTMapView() {
@@ -53,5 +59,11 @@ public class SightsDetailActivity extends AppCompatActivity {
         sightsDetailTMapView.setLanguage(TMapView.LANGUAGE_KOREAN);
         sightsDetailTMapView.setTrackingMode(true);
         sightsDetailTMapView.setSightVisible(true);
+        sightsDetailTMapView.setLocationPoint(Float.parseFloat(sights.getCoordX()), Float.parseFloat(sights.getCoordY()));
+        TMapMarkerItem item = new TMapMarkerItem();
+        item.setTMapPoint(new TMapPoint(Float.parseFloat(sights.getCoordX()), Float.parseFloat(sights.getCoordY())));
+        item.setVisible(item.VISIBLE);
+        item.setCalloutRightButtonImage(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
+        sightsDetailTMapView.addMarkerItem("marker", item);
     }
 }

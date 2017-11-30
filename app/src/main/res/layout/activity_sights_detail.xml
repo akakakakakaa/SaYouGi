@@ -27,7 +27,7 @@
     <com.skp.Tmap.TMapView
         android:id="@+id/sightsDetailTMapView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sightsDetailActionbar"
         app:layout_constraintRight_toRightOf="parent"/>
@@ -88,7 +88,7 @@
                 android:textColor="#44000000"
                 android:textSize="14sp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sightsDetailOldAddress"/>
+                app:layout_constraintTop_toBottomOf="@+id/sightsDetailNewAddress"/>
 
             <TextView
                 android:id="@+id/sightsDetailDescription"

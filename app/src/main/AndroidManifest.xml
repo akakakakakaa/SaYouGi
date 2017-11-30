@@ -20,7 +20,6 @@
         </activity>
         <activity android:name=".view.ThemeDetailActivity"/>
         <activity android:name=".view.ReportActivity" />
+        <activity android:name=".view.SightsDetailActivity" />
     </application>
-
-
 </manifest>
