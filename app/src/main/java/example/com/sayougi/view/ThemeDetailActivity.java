@@ -1,4 +1,4 @@
-package example.com.seoyougi.view;
+package example.com.sayougi.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,9 +16,9 @@ import java.io.IOException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import example.com.seoyougi.R;
-import example.com.seoyougi.http.HttpRequest;
-import example.com.seoyougi.model.Theme;
+import example.com.sayougi.R;
+import example.com.sayougi.http.HttpRequest;
+import example.com.sayougi.model.Theme;
 import retrofit2.Call;
 
 /**

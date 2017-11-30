@@ -1,4 +1,4 @@
-package example.com.seoyougi.view;
+package example.com.sayougi.view;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import example.com.seoyougi.R;
-import example.com.seoyougi.model.ThemeSights;
+import example.com.sayougi.R;
+import example.com.sayougi.model.ThemeSights;
 
 /**
  * Created by icns on 2017-11-28.

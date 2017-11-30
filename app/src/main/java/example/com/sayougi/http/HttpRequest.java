@@ -1,4 +1,4 @@
-package example.com.seoyougi.http;
+package example.com.sayougi.http;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;

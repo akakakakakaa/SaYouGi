@@ -1,4 +1,4 @@
-package example.com.seoyougi;
+package example.com.sayougi;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

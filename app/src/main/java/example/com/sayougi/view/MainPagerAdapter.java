@@ -1,4 +1,4 @@
-package example.com.seoyougi.view;
+package example.com.sayougi.view;
 
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;

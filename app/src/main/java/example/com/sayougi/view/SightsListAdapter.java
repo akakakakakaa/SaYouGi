@@ -1,4 +1,4 @@
-package example.com.seoyougi.view;
+package example.com.sayougi.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,8 +17,8 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import example.com.seoyougi.R;
-import example.com.seoyougi.model.Sights;
+import example.com.sayougi.R;
+import example.com.sayougi.model.Sights;
 
 /**
  * Created by icns on 2017-11-24.

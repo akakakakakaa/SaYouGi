@@ -1,4 +1,4 @@
-package example.com.seoyougi.view;
+package example.com.sayougi.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,8 +13,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import example.com.seoyougi.R;
-import example.com.seoyougi.model.Theme;
+import example.com.sayougi.R;
+import example.com.sayougi.model.Theme;
 
 /**
  * Created by mansu on 2017-11-27.

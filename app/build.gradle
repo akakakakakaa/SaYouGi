@@ -4,7 +4,7 @@ apply plugin: 'io.fabric'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "example.com.seoyougi"
+        applicationId "example.com.sayougi"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1

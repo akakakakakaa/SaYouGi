@@ -1,4 +1,4 @@
-package example.com.seoyougi.view;
+package example.com.sayougi.view;
 
 import android.content.Context;
 import android.support.constraint.ConstraintLayout;

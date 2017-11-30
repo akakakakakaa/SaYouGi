@@ -1,4 +1,4 @@
-package example.com.seoyougi.view;
+package example.com.sayougi.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +9,8 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import example.com.seoyougi.R;
-import example.com.seoyougi.http.HttpRequest;
+import example.com.sayougi.R;
+import example.com.sayougi.http.HttpRequest;
 
 /**
  * Created by icns on 2017-11-28.

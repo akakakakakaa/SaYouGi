@@ -1,4 +1,4 @@
-package example.com.seoyougi.view;
+package example.com.sayougi.view;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;

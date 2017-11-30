@@ -1,4 +1,4 @@
-package example.com.seoyougi.view;
+package example.com.sayougi.view;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +9,7 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import example.com.seoyougi.R;
+import example.com.sayougi.R;
 
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.mainViewPager)
