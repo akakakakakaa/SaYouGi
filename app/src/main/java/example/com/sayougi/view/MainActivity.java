@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.crashlytics.android.Crashlytics;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,13 +20,16 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.mainBottomNavigation)
     BottomNavigationBar mainBottomNavigation;
 
+    private FirebaseAnalytics mFirebaseAnalytics;
+
     private MainPagerAdapter mainPagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        Crashlytics.getInstance().crash(); // Force a crash
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         setViewPager();
         setNavigationBar();
     }
