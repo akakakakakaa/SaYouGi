@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "349745196052",
+    "firebase_url": "https://sayougi-186514.firebaseio.com",
+    "project_id": "sayougi-186514",
+    "storage_bucket": "sayougi-186514.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349745196052:android:a600d7ec38b74438",
+        "android_client_info": {
+          "package_name": "example.com.sayougi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349745196052-f4si330aq4rpttfv3tnp3rj5bo2hs8i9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "example.com.sayougi",
+            "certificate_hash": "ba8ea29978d25206605cac8e0908af545a752463"
+          }
+        },
+        {
+          "client_id": "349745196052-fimsp6ltchm6211eho5qgekilju0ovo2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf41LJkBPtxAqgb7guIYYnEUtPMZ_UbUk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349745196052-fimsp6ltchm6211eho5qgekilju0ovo2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
