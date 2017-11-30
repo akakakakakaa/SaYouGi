@@ -1,6 +1,7 @@
 package example.com.sayougi.view;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 .addItem(new BottomNavigationItem(R.drawable.ic_location, "추천명소"))
                 .addItem(new BottomNavigationItem(R.drawable.ic_theme, "테마"))
                 .addItem(new BottomNavigationItem(R.drawable.ic_report, "신고"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_launcher_background, "로그아웃"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_web, "웹 이동"))
                 .initialise();
 
         mainBottomNavigation.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener() {
@@ -57,8 +58,12 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, ReportActivity.class);
                     startActivity(intent);
                 }
-                else if(position == 3)
-                    finish();
+                else if(position == 3) {
+                    String url = "http://115.68.182.176";
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+                }
                 else
                     mainViewPager.setCurrentItem(position);
             }

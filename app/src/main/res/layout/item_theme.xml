@@ -2,18 +2,27 @@
 <android.support.constraint.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="80dp"
-    android:paddingBottom="80dp"
-    android:background="#FFFFFF">
+    android:layout_height="wrap_content">
+
     <ImageView
         android:id="@+id/themeImage"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="fitXY"
-        android:background="@mipmap/ic_launcher"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/themeDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#44000000"
+        android:textColor="#FFFFFF"
+        android:padding="5dp"
+        android:gravity="left|top"
+        app:layout_constraintLeft_toLeftOf="@+id/themeImage"
+        app:layout_constraintRight_toRightOf="@+id/themeImage"
+        app:layout_constraintBottom_toBottomOf="@+id/themeImage"/>
 </android.support.constraint.ConstraintLayout>

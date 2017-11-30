@@ -9,10 +9,17 @@ import com.skp.Tmap.TMapMarkerItem;
 import com.skp.Tmap.TMapPoint;
 import com.skp.Tmap.TMapView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import example.com.sayougi.R;
+import example.com.sayougi.http.HttpRequest;
 import example.com.sayougi.model.Sights;
+import retrofit2.Call;
 
 /**
  * Created by mansu on 2017-11-27.
@@ -44,10 +51,39 @@ public class SightsDetailActivity extends AppCompatActivity {
     }
 
     private void setSightsInfo() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                HttpRequest.SaYouGiService service = HttpRequest.getSaYouGiService();
+                Call<String> json = service.getPlaceJson(sights.getId());
+                try {
+                    String result = json.execute().body();
+                    final JSONObject object = new JSONObject(result);
+                    final JSONObject object2 = new JSONObject(object.getString("extra"));
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                String detail = object2.getString("주요내용");
+                                String detail2 = object2.getString("자세히보기(모바일바로가기)");
+                                String detail3 = object2.getString("자세히보기(홈페이지바로가기)");
+                                sightsDetailDescription.setText(((detail != null) ? detail : "") + "\n" + ((detail2 != null) ? detail2 : "") + "\n" + ((detail3 != null) ? detail3 : ""));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
         sightsDetailTitle.setText(sights.getName());
         sightsDetailOldAddress.setText(sights.getAddrOld());
         sightsDetailNewAddress.setText(sights.getAddrNew());
-        sightsDetailDescription.setText(sights.getExtra());
+        //sightsDetailDescription.setText(sights.getExtra());
     }
 
     private void setSightsDetailTMapView() {

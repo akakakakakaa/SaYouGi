@@ -24,6 +24,8 @@ public class HttpRequest {
     public interface SaYouGiService {
         @POST("places")
         Call<String> getPlacesJson(@Query("page") int page);
+        @POST("place/{place}")
+        Call<String> getPlaceJson(@Path("place") String place);
         @POST("themes")
         Call<String> getThemesJson(@Query("page") int page);
         @POST("theme/{theme}/places")

@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:background="#FFFFFF"
     android:layout_height="match_parent">
 
     <View
@@ -38,7 +39,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/theme_detail_tmap"
-        android:layout_margin="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/themeDetailActionbar"
         app:layout_constraintRight_toRightOf="parent"
@@ -48,6 +48,7 @@
         android:id="@+id/themeDetailSights"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="#A4A199"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/themeDetailTMap"
         app:layout_constraintRight_toRightOf="parent"
