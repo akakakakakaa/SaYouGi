@@ -1,6 +1,5 @@
 package example.com.sayougi.view;
 
-import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -36,10 +35,7 @@ public class MainPagerAdapter extends FragmentStatePagerAdapter {
                 currentFragment = new Fragment();
                 break;
             case 3:
-                currentFragment = new ThemeFragment();
-                break;
-            case 4:
-                currentFragment = new ThemeFragment();
+                currentFragment = new Fragment();
                 break;
         }
 

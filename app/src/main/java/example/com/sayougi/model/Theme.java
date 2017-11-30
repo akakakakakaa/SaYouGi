@@ -1,7 +1,6 @@
 package example.com.sayougi.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * Created by mansu on 2017-11-27.

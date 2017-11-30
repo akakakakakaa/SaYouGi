@@ -15,6 +15,7 @@ import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import example.com.sayougi.R;
 import example.com.sayougi.http.HttpRequest;
 import example.com.sayougi.model.Theme;
@@ -43,6 +44,11 @@ public class ThemeDetailActivity extends AppCompatActivity {
 
         setThemeDetailTMap();
         setThemeDetailSights();
+    }
+
+    @OnClick(R.id.themeBack)
+    public void themeBackClicked() {
+        finish();
     }
 
     private void setThemeDetailTMap() {

@@ -8,7 +8,6 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.crashlytics.android.Crashlytics;
 import com.google.firebase.analytics.FirebaseAnalytics;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import example.com.sayougi.R;
@@ -62,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, ReportActivity.class);
                     startActivity(intent);
                 }
+                else if(position == 3)
+                    finish();
                 else
                     mainViewPager.setCurrentItem(position);
             }

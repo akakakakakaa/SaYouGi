@@ -2,13 +2,11 @@ package example.com.sayougi.view;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.tmall.ultraviewpager.UltraViewPager;
-import com.tmall.ultraviewpager.transformer.UltraDepthScaleTransformer;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,10 +46,11 @@ public class ThemeFragment extends Fragment {
         themeViewPager.setScrollMode(UltraViewPager.ScrollMode.HORIZONTAL);
         themeViewPager.setMultiScreen(0.6f);
         themeViewPager.setItemRatio(1.0f);
-        themeViewPager.setPageTransformer(false, new UltraDepthScaleTransformer());
+        themeViewPager.setAutoMeasureHeight(true);
 
         themePagerAdapter = new ThemePagerAdapter(getContext());
         themeViewPager.setAdapter(themePagerAdapter);
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -63,7 +62,7 @@ public class ThemeFragment extends Fragment {
                     JSONObject jsonObject = new JSONObject(json);
                     JSONArray jsonArray = (JSONArray)jsonObject.get("data");
 
-                    List<Theme> themes = new ArrayList<>();
+                    final List<Theme> themes = new ArrayList<>();
                     for(int i=0; i<jsonArray.length(); i++) {
                         JSONObject data = (JSONObject)jsonArray.get(i);
                         themes.add(new Theme(data.getString("id"),

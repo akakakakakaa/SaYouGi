@@ -23,6 +23,16 @@
         app:layout_constraintRight_toRightOf="@+id/themeDetailActionbar"
         app:layout_constraintBottom_toBottomOf="@+id/themeDetailActionbar"/>
 
+    <Button
+        android:id="@+id/themeBack"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_back"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintLeft_toLeftOf="@+id/themeDetailActionbar"
+        app:layout_constraintTop_toTopOf="@+id/themeDetailActionbar"
+        app:layout_constraintBottom_toBottomOf="@+id/themeDetailActionbar"/>
+
     <com.skp.Tmap.TMapView
         android:id="@+id/themeDetailTMap"
         android:layout_width="0dp"
