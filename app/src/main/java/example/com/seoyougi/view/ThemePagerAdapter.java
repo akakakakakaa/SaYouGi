@@ -1,4 +1,4 @@
-package example.com.sayougi.view;
+package example.com.seoyougi.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,11 +11,10 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import example.com.sayougi.R;
-import example.com.sayougi.model.Theme;
+import example.com.seoyougi.R;
+import example.com.seoyougi.model.Theme;
 
 /**
  * Created by mansu on 2017-11-27.
@@ -27,16 +26,18 @@ public class ThemePagerAdapter extends PagerAdapter {
 
     public ThemePagerAdapter(@NonNull Context context) {
         this.context = context;
-        themes = new ArrayList<>();
     }
 
-    public synchronized void setThemes(List<Theme> themes) {
+    public void setThemes(List<Theme> themes) {
         this.themes = themes;
     }
 
     @Override
-    public synchronized int getCount() {
-        return themes.size();
+    public int getCount() {
+        if(themes == null)
+            return 0;
+        else
+            return themes.size();
     }
 
     @Override
@@ -46,9 +47,9 @@ public class ThemePagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(final ViewGroup container, final int position) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_theme, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_theme, container, false);
         ImageView themeImage = (ImageView)view.findViewById(R.id.themeImage);
-        //Picasso.with(context).load(R.drawable.ic_launcher_background).into(themeImage);
+        Picasso.with(context).load(R.drawable.ic_launcher_background).into(themeImage);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

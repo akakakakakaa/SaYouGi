@@ -1,12 +1,12 @@
-package example.com.sayougi.view;
+package example.com.seoyougi.view;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.tmall.ultraviewpager.UltraViewPager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,71 +18,67 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import example.com.sayougi.R;
-import example.com.sayougi.http.HttpRequest;
-import example.com.sayougi.model.Sights;
+import example.com.seoyougi.R;
+import example.com.seoyougi.http.HttpRequest;
+import example.com.seoyougi.model.Theme;
 import retrofit2.Call;
 
 /**
- * Created by icns on 2017-11-24.
+ * Created by mansu on 2017-11-27.
  */
 
-public class SightsListFragment extends Fragment {
-    @BindView(R.id.sightsListRecyclerView)
-    RecyclerView sightsListRecyclerView;
+public class ThemeFragment extends Fragment {
+    @BindView(R.id.themeViewPager)
+    UltraViewPager themeViewPager;
 
-    private SightsListAdapter sightsListAdapter;
+    private ThemePagerAdapter themePagerAdapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_sights_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_theme, container, false);
         ButterKnife.bind(this, view);
 
-        setSightsListRecyclerView();
+        setThemeViewPager();
 
         return view;
     }
 
-    private void setSightsListRecyclerView() {
-        sightsListRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        sightsListAdapter = new SightsListAdapter(getContext());
-        sightsListRecyclerView.setAdapter(sightsListAdapter);
+    private void setThemeViewPager() {
+        themeViewPager.setScrollMode(UltraViewPager.ScrollMode.HORIZONTAL);
+        themeViewPager.setMultiScreen(0.6f);
+        themeViewPager.setItemRatio(1.0f);
+        themeViewPager.setAutoMeasureHeight(true);
+
+        themePagerAdapter = new ThemePagerAdapter(getContext());
+        themeViewPager.setAdapter(themePagerAdapter);
 
         new Thread(new Runnable() {
             @Override
             public void run() {
                 HttpRequest.SaYouGiService service = HttpRequest.getSaYouGiService();
-                Call<String> request = service.getPlacesJson(1);
+                Call<String> request = service.getThemesJson(1);
                 try {
                     String json = request.execute().body();
                     System.out.println(json);
                     JSONObject jsonObject = new JSONObject(json);
                     JSONArray jsonArray = (JSONArray)jsonObject.get("data");
 
-                    List<Sights> sights = new ArrayList<>();
+                    final List<Theme> themes = new ArrayList<>();
                     for(int i=0; i<jsonArray.length(); i++) {
                         JSONObject data = (JSONObject)jsonArray.get(i);
-                        sights.add(new Sights(data.getString("id"),
+                        themes.add(new Theme(data.getString("id"),
                                 data.getString("lang"),
                                 data.getString("name"),
-                                data.getString("coord_x"),
-                                data.getString("coord_y"),
-                                data.getString("addr_new"),
-                                data.getString("addr_old"),
-                                data.getString("addr_region"),
-                                data.getString("contact"),
+                                data.getString("count_place"),
                                 data.getString("description"),
-                                data.getString("content"),
-                                data.getString("updated_at"),
-                                data.getString("extra")));
+                                data.getString("updated_at")));
                     }
-                    sightsListAdapter.setSights(sights);
+                    themePagerAdapter.setThemes(themes);
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            sightsListAdapter.notifyDataSetChanged();
+                            themePagerAdapter.notifyDataSetChanged();
                         }
                     });
-
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (JSONException e) {

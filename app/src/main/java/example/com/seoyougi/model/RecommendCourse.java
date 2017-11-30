@@ -1,4 +1,4 @@
-package example.com.sayougi.model;
+package example.com.seoyougi.model;
 
 import java.util.List;
 

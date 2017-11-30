@@ -1,4 +1,4 @@
-package example.com.sayougi;
+package example.com.seoyougi;
 
 import org.junit.Test;
 

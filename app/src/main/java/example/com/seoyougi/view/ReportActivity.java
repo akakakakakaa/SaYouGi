@@ -1,28 +1,26 @@
-package example.com.sayougi.view;
+package example.com.seoyougi.view;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import example.com.sayougi.R;
+import example.com.seoyougi.R;
+import example.com.seoyougi.http.HttpRequest;
 
 /**
  * Created by icns on 2017-11-28.
  */
 
 public class ReportActivity extends AppCompatActivity {
-    public static final int SELECT_PICTURE = 1;
-    private Bitmap bitmap;
+    @BindView(R.id.reportTitle)
+    TextView reportTitle;
+    @BindView(R.id.reportContent)
+    TextView reportContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +31,17 @@ public class ReportActivity extends AppCompatActivity {
 
     @OnClick(R.id.reportReport)
     public void reportClick(View view) {
+        HttpRequest.SaYouGiService service = HttpRequest.getSaYouGiService();
+
+        String title = reportTitle.getText().toString();
+        String content = reportContent.getText().toString();
+        service.reportJson(title, content, null, null);
         Toast.makeText(this, "제보되었습니다.", Toast.LENGTH_LONG).show();
+        finish();
+    }
+
+    @OnClick(R.id.reportBack)
+    public void reportBackClicked() {
+        finish();
     }
 }

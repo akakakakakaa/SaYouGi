@@ -1,4 +1,4 @@
-package example.com.sayougi.view;
+package example.com.seoyougi.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,9 +15,10 @@ import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import example.com.sayougi.R;
-import example.com.sayougi.http.HttpRequest;
-import example.com.sayougi.model.Theme;
+import butterknife.OnClick;
+import example.com.seoyougi.R;
+import example.com.seoyougi.http.HttpRequest;
+import example.com.seoyougi.model.Theme;
 import retrofit2.Call;
 
 /**
@@ -43,6 +44,11 @@ public class ThemeDetailActivity extends AppCompatActivity {
 
         setThemeDetailTMap();
         setThemeDetailSights();
+    }
+
+    @OnClick(R.id.themeBack)
+    public void themeBackClicked() {
+        finish();
     }
 
     private void setThemeDetailTMap() {

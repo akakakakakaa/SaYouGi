@@ -1,4 +1,4 @@
-package example.com.sayougi.view;
+package example.com.seoyougi.view;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -14,7 +14,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import example.com.sayougi.R;
+import example.com.seoyougi.R;
 
 /**
  * Created by mansu on 2017-11-27.

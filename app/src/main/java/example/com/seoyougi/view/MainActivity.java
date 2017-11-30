@@ -1,23 +1,15 @@
-package example.com.sayougi.view;
+package example.com.seoyougi.view;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.provider.MediaStore;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import example.com.sayougi.R;
+import example.com.seoyougi.R;
 
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.mainViewPager)
@@ -65,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, ReportActivity.class);
                     startActivity(intent);
                 }
+                else if(position == 3)
+                    finish();
                 else
                     mainViewPager.setCurrentItem(position);
             }

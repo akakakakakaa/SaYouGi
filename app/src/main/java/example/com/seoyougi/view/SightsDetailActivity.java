@@ -1,4 +1,4 @@
-package example.com.sayougi.view;
+package example.com.seoyougi.view;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -11,8 +11,8 @@ import com.skp.Tmap.TMapView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import example.com.sayougi.R;
-import example.com.sayougi.model.Sights;
+import example.com.seoyougi.R;
+import example.com.seoyougi.model.Sights;
 
 /**
  * Created by mansu on 2017-11-27.

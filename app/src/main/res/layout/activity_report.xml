@@ -24,6 +24,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/reportActionbar"/>
 
     <Button
+        android:id="@+id/reportBack"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="@drawable/ic_back"
